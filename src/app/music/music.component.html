@@ -1,0 +1,10 @@
+<div class="container">
+    <mat-selection-list #trackList [(ngModel)]="tracksToPlay" (ngModelChange)="addTrack()">
+        <mat-list-option *ngFor="let track of tracks" [value]="track" >
+            {{track}}
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+
+
+

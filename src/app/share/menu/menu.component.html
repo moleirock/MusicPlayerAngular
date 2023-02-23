@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="max-width: 120rem; margin: 0 auto;">
+        <span>Musiteca</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="navigate('')">
+            <mat-icon>headphones</mat-icon>
+            <span>Music</span>
+          </button>
+          <button mat-menu-item (click)="navigate('playlist')">
+            <mat-icon>play_circle</mat-icon>
+            <span>Play List</span>
+          </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

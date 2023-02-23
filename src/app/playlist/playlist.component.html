@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="player">
+    <h2>{{currentTrack || 'No has seleccionado ninguna canción'}}</h2>
+    <div class="player__time">
+      <span>{{currentTime *1000| date:'mm:ss'}}/</span>
+      <span>{{duration*1000 | date:'mm:ss' }}</span>
+    </div>
+    <mat-slider style="width:100%;">
+      <input matSliderThumb [value]="timer" min="0" max="100" #progressBar (input)="seekTrack(progressBar)">
+    </mat-slider>
+    <div class="player__buttons">
+      <button mat-fab color="primary" aria-label="Button Play Music" (click)="playMusic()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-fab color="primary" aria-label="Button Play Music" (click)="pauseMusic()">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <div class="volume__box">
+        <label >Vol:</label>
+        <mat-slider >
+          <input matSliderThumb #volume value="50" min="0" max="99" step="1" (input)="setVolume(volume)" >
+        </mat-slider>
+      </div>
+    </div>
+  </div>
+  <mat-list role="list" *ngIf="tracksToPlay.length>0">
+    <h2>Lista de Canciones Seleccionadas</h2>
+    <mat-list-item role="listitem" *ngFor="let track of tracksToPlay" (click)="playTrack(track)" [ngClass]="{active:currentTrack==track}" class="pointer">{{track}}</mat-list-item>   
+  </mat-list>
+</div>

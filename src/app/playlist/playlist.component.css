@@ -1,0 +1,30 @@
+.player{
+ display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+ place-items: center;
+ padding: 2rem;
+}
+
+.player__buttons{
+ display: flex;
+ gap: 2rem;
+}
+
+.volume__box{
+   display: flex;
+   align-items:center ;
+   gap: 1rem;
+}
+
+#volume{
+   width: 100%;
+}
+
+.active {
+   background-color: hsl(226, 55%, 75%);
+   border-radius: 2rem;
+ }
+.pointer{
+   cursor: pointer !important;
+}
